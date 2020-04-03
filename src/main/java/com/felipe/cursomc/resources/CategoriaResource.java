@@ -44,4 +44,11 @@ public class CategoriaResource {
 		service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@CrossOrigin
+	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable Integer id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 }

@@ -30,7 +30,9 @@ public class Produto implements Serializable {
 	
 	@JsonIgnore
 	@ManyToMany
-	@JoinTable(name = "produto_categoria", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+	@JoinTable(name = "produto_categoria", 
+	joinColumns = @JoinColumn(name = "produto_id"), 
+	inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	private List<Categoria> categorias = new ArrayList<>();
 
 	@JsonIgnore
@@ -38,6 +40,7 @@ public class Produto implements Serializable {
 	private Set<ItemPedido> itens = new HashSet<>();
 
 	public Produto() {
+	
 	}
 
 	public Produto(Integer id, String nome, Double preco) {
