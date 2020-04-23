@@ -86,6 +86,10 @@ public class Cliente implements Serializable {
 	public void setTipo(Integer tipo) {
 		this.tipo = tipo;
 	}
+	
+	public TipoCliente getTipo() {
+		return TipoCliente.toEnum(tipo);
+	}
 
 	public Integer getId() {
 		return id;
@@ -118,13 +122,4 @@ public class Cliente implements Serializable {
 	public void setCpfOuCnpj(String cpfOuCnpj) {
 		this.cpfOuCnpj = cpfOuCnpj;
 	}
-
-	public TipoCliente getTipo() {
-		return TipoCliente.toEnum(tipo);
-	}
-
-	public void setTipo(TipoCliente tipo) {
-		this.tipo = tipo.getCod();
-	}
-
 }

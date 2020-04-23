@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Pedido implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -73,6 +74,10 @@ public class Pedido implements Serializable {
 	public Date getInstante() {
 		return instante;
 	}
+	
+	public void setInstante(Date instante) {
+		this.instante = instante;
+	}
 
 	public Set<ItemPedido> getItens() {
 		return itens;
@@ -80,10 +85,6 @@ public class Pedido implements Serializable {
 
 	public void setItens(Set<ItemPedido> itens) {
 		this.itens = itens;
-	}
-
-	public void setInstante(Date instante) {
-		this.instante = instante;
 	}
 
 	public Pagamento getPagamento() {
